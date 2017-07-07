@@ -1,6 +1,7 @@
-node_modules
-*.log
 .DS_Store
 
-# poi dist
-dist
+node_modules
+*.log
+
+yarn-debug.log*
+yarn-error.log* 
