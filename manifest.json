@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "FotoFluent",
+  "version": "0.0.0",
+  "description": "A Chrome extension to help you learn a new language!",
+  "options_page": "app/pages/options.html",
+  "chrome_url_overrides": {
+    "newtab": "app/pages/tab.html"
+  },
+  "permissions": [
+    "https://fotofluent-admin.herokuapp.com/*",
+    "storage"
+  ]
+}

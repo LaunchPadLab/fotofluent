@@ -10,7 +10,7 @@ const app = new Vue({
   el: '#app',
   render (h) {
     return (
-      <Tab></Tab>
+      <Tab />
     )
   }
 })
