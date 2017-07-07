@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "FotoFluent",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+  ],
+  "author": "Diana Camacho, Rachel Killackey",
+  "chrome_url_overrides": {
+    "newtab": "newTab.html"
+  }
+}
+
+{
+  "manifest_version": 2,
+  "name": "FotoFluent",
+  "version": "1.0.0",
+  "description": "A Chrome extension that helps you learn a new language!",
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  "options_page": "options.html",
+  "chrome_url_overrides": {
+    "newtab": "tab.html"
+  },
+  "permissions": [
+    "https://fotofluent-admin.herokuapp.com/*",
+    "storage"
+  ]
+}
