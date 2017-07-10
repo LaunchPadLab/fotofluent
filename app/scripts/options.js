@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 import 'babel-polyfill'
 import Vue from 'vue'
 import Options from '../components/options.vue'
