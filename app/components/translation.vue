@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <p v-if="translation">{{ foreignWord }}</p>
-    <p v-else>Loading....</p>
+  <div class="translation">
+    <p>{{ foreignWord }}</p>
 
-    <div id="translate-btn" v-on:click="triggerTranslation">
-      <p v-if="showTranslation">{{ englishTranslation }}</p>
-      <p v-else>Translate</p>
-    </div>
+    <button id="translate-btn" v-on:click="toggleTranslation">
+      <span v-if="!showTranslation">Show Translation</span>
+      <span v-else>Hide Translation</span>
+    </button>
+    <p v-if="showTranslation">{{ englishTranslation }}</p>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
       }
     },
     methods: {
-      triggerTranslation() {
+      toggleTranslation() {
         this.showTranslation = !this.showTranslation
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Hello!</p>
+    <p>FotoFluent</p>
     <Translation :translation="translation" v-if="translation"></Translation>
   </div>
 </template>
@@ -18,9 +18,7 @@
     data() {
       return {
         translation: null,
-        image: null,
-        error: null
-      }
+        image: null      }
     },
     mounted() {
       this.requestData()
@@ -35,7 +33,6 @@
           })
           .catch(err => {
             console.log(err)
-            this.error = err
           })
       }
     }
@@ -49,10 +46,10 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: 'Arial', 'sans-serif';
   }
 
-  div {
-    font-family: 'Arial', 'sans-serif';
+  .translation {
     font-size: 48px;
     text-align: center;
   }
