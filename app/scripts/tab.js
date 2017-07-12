@@ -7,8 +7,6 @@ import AsyncComputed from 'vue-async-computed'
 
 Vue.use(AsyncComputed)
 
-const translationsUrl = 'https://fotofluent-admin.herokuapp.com/transaltions.json'
-
 const app = new Vue({
   el: '#app',
   render (h) {
