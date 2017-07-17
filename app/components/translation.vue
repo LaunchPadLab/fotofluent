@@ -12,7 +12,9 @@
 
 <script>
   export default {
-    props: ['translation'],
+    props: {
+      translation: Object
+    },
     data() {
       return {
         foreignWord: this.translation.foreign_word,
