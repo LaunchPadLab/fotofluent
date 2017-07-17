@@ -19,7 +19,9 @@
     "name": "rkillackey",
     "email": "rachel@launchpadlab.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.16.2"
+  },
   "devDependencies": {
     "babel-cli": "6.x.x",
     "babel-core": "^6.22.1",
