@@ -30,7 +30,7 @@
           .then(response => {
             this.translation = _.sample(response.data)
             this.image = this.translation.word.image
-            document.body.style.backgroundImage = `url(${this.image})`;
+            document.body.style.backgroundImage = `url(${this.image})`
           })
           .catch(err => {
             console.log(err)
