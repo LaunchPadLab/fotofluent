@@ -18,7 +18,8 @@
     data() {
       return {
         translation: null,
-        image: null      }
+        image: null      
+      }
     },
     mounted() {
       this.requestData()
