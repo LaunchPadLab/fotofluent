@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 import ChromePromise from 'chrome-promise'
 
 Vue.use(Vuex)
