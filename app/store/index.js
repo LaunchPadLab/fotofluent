@@ -40,4 +40,14 @@ const hydrate = async () => {
 }
 hydrate()
 
+//
+// Hydrate whenever chrome state changes
+//
+const bindListeners = async () => {
+  chrome.storage.onChanged.addListener(() => {
+    store.dispatch('HYDRATE_STATE')
+  })
+}
+bindListeners()
+
 export default store
