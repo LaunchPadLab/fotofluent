@@ -3,7 +3,8 @@
   "extends": "standard",
   "env": {
     "node": true,
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "plugins": [
     "html",
@@ -15,6 +16,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "strict": 0
+    "strict": 0,
+    "comma-dangle": 0
   }
 }
