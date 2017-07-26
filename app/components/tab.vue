@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="page-title">FotoFluent</h1>
-    <SearchBox></SearchBox>
-    <Translation :translation="translation" v-if="translation"></Translation>
+    <SearchBox />
+    <Translation :translation="translation" v-if="translation" />
   </div>
 </template>
 
