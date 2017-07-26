@@ -18,9 +18,8 @@
     methods: {
       onSearch () {
         const baseUrl = "https://google.com/search?q="
-        chrome.tabs.getCurrent(tab => {
-          chrome.tabs.update(tab.id, { url: `${baseUrl}${this.search}` })
-        })
+        const newUrl = `${baseUrl}${this.search}`
+        chrome.tabs.getCurrent(tab => chrome.tabs.update(tab.id, { url: newUrl }))
       }
     }
   }
