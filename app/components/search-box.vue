@@ -1,0 +1,27 @@
+<template>
+  <form action="?" @submit="onSearch">
+    <input type="text" v-model="search"/>
+    <button style="display:none;" type="submit">Search</button>
+  </form>
+</template>
+
+<script>
+  export default {
+    name: 'search-box',
+    
+    data () {
+      return {
+        search: '',
+      }
+    },
+
+    methods: {
+      onSearch () {
+        const baseUrl = "https://google.com/search?q="
+        chrome.tabs.getCurrent(tab => {
+          chrome.tabs.update(tab.id, { url: `${baseUrl}${this.search}` })
+        })
+      }
+    }
+  }
+</script>
