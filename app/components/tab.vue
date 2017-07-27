@@ -3,40 +3,39 @@
     <h1 class="page-title">FotoFluent</h1>
     <SearchBox />
     <Translation :translation="translation" v-if="translation" />
+    <TopSites />
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
-  import _ from 'lodash'
+  import store from '../store/index.js'
   import Translation from './translation.vue'
   import SearchBox from './search-box.vue'
+  import TopSites from './top-sites.vue'
+  import { mapActions, mapState } from 'vuex'
 
   export default {
     name: 'tab',
     components: {
       Translation,
       SearchBox,
+      TopSites,
     },
-    data() {
-      return {
-        translation: null,
-        image: null      
-      }
-    },
-    mounted() {
+
+    mounted () {
       this.requestData()
+      this.requestTopSites()
     },
+
     methods: {
-      requestData() {
-        axios.get(`https://fotofluent-admin.herokuapp.com/translations.json`)
-          .then(response => {
-            this.translation = _.sample(response.data)
-            this.image = this.translation.word.image
-            document.body.style.backgroundImage = `url(${this.image})`
-          })
-          .catch(err => console.log(err))
-      }
+      ...mapActions({ 
+        requestData: 'REQUEST_DATA',
+        requestTopSites: 'REQUEST_TOP_SITES',
+      })
+    },
+    
+    computed: {
+      ...mapState([ 'translation' ])
     }
   }
 </script>
