@@ -1,10 +1,10 @@
 <template>
   <div>
-  <h3>Top Sites</h3>  
-  <ul>
-    <li v-for="site in topSites"><a :href="site.url">{{ site.title }}</a></li>
-  </ul>
-</div>
+    <h3>Top Sites</h3>  
+    <ul>
+      <li v-for="site in topSites"><a :href="site.url">{{ site.title }}</a></li>
+    </ul>
+  </div>
 </template>
 
 <script>
