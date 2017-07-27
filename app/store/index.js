@@ -8,8 +8,8 @@ Vue.use(Vuex)
 const chromep = new ChromePromise()
 
 export const LANGUAGES = [
-  { key: 'GERMAN', value: 'DE' },
-  { key: 'SPANISH', value: 'ES' }
+  { key: 'GERMAN', value: 'de-DE' },
+  { key: 'SPANISH', value: 'es-MX' }
 ]
 
 const store = new Vuex.Store({
