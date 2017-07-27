@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import ChromePromise from 'chrome-promise'
 import axios from 'axios'
-import _ from 'lodash'
+import { sample } from '../lib/utils.js'
 
 Vue.use(Vuex)
 const chromep = new ChromePromise()
@@ -14,7 +14,7 @@ export const LANGUAGES = [
 
 const store = new Vuex.Store({
   state: {
-    language: 'GER',
+    language: 'DE',
     topSites: [],
     translation: {},
   },
@@ -26,14 +26,14 @@ const store = new Vuex.Store({
         'topSites',
         'translation',
       ])
-      commit('SET_LANGUAGE', items.language || 'GER')
+      commit('SET_LANGUAGE', items.language)
       commit('SET_TOP_SITES', items.topSites)
       commit('SET_TRANSLATION', items.translation)
     },
     async REQUEST_DATA ({ commit }) {
       try {
         const response = await axios.get(`https://fotofluent-admin.herokuapp.com/translations.json`)
-        const translation = _.sample(response.data)
+        const translation = sample(response.data)
         commit('SET_TRANSLATION', translation)
         document.body.style.backgroundImage = `url(${translation.word.image})`
       } catch (err) {
