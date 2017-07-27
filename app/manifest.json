@@ -9,7 +9,8 @@
   },
   "permissions": [
     "https://fotofluent-admin.herokuapp.com/*",
-    "storage"
+    "storage",
+    "topSites"
   ],
   "web_accessible_resources": [
     "pages/*",

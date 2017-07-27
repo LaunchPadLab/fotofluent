@@ -1,12 +1,12 @@
 <template>
   <div class="translation">
-    <p>{{ foreignWord }}</p>
+    <p>{{ translation.foreign_word }}</p>
 
     <button id="translate-btn" v-on:click="toggleTranslation">
       <span v-if="!showTranslation">Show Translation</span>
       <span v-else>Hide Translation</span>
     </button>
-    <p v-if="showTranslation">{{ englishTranslation }}</p>
+    <p v-if="showTranslation">{{ translation.word.word }}</p>
   </div>
 </template>
 
@@ -15,15 +15,13 @@
     props: {
       translation: Object
     },
-    data() {
+    data () {
       return {
-        foreignWord: this.translation.foreign_word,
-        englishTranslation: this.translation.word.word,
-        showTranslation: false
+        showTranslation: false,
       }
     },
     methods: {
-      toggleTranslation() {
+      toggleTranslation () {
         this.showTranslation = !this.showTranslation
       }
     }
