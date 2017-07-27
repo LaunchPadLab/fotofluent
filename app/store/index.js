@@ -9,7 +9,9 @@ const chromep = new ChromePromise()
 
 export const LANGUAGES = [
   { key: 'GERMAN', value: 'GER' },
-  { key: 'SPANISH', value: 'SPA' }
+  { key: 'SPANISH', value: 'SPA' },
+  { key: 'ITALIAN', value: 'ITA' },
+  { key: 'FRENCH', value: 'FRA' },
 ]
 
 const store = new Vuex.Store({
