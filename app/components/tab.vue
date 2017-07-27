@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="page-title">FotoFluent</h1>
+    <h1 class="page-title">FotoFluent ({{ language }})</h1>
     <SearchBox />
     <Translation :translation="translation" v-if="translation" />
     <TopSites />
@@ -34,7 +34,7 @@
     },
     
     computed: {
-      ...mapState([ 'translation' ])
+      ...mapState([ 'translation', 'language' ])
     }
   }
 </script>

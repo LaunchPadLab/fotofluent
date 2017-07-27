@@ -14,6 +14,8 @@ export const LANGUAGES = [
   { key: 'FRENCH', value: 'FRA' },
 ]
 
+const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/translations.json'
+
 const store = new Vuex.Store({
   state: {
     language: 'GER',
@@ -33,8 +35,9 @@ const store = new Vuex.Store({
       commit('SET_TRANSLATION', items.translation)
     },
     async REQUEST_DATA ({ commit }) {
+      console.log(`action: requesting data with ${store.state.language}`)
       try {
-        const response = await axios.get(`https://fotofluent-admin.herokuapp.com/translations.json`)
+        const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
         const translation = _.sample(response.data)
         commit('SET_TRANSLATION', translation)
         document.body.style.backgroundImage = `url(${translation.word.image})`
