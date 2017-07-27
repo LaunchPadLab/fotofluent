@@ -8,8 +8,8 @@ Vue.use(Vuex)
 const chromep = new ChromePromise()
 
 export const LANGUAGES = [
-  { key: 'GERMAN', value: 'GER' },
-  { key: 'SPANISH', value: 'SPA' }
+  { key: 'GERMAN', value: 'DE' },
+  { key: 'SPANISH', value: 'ES' }
 ]
 
 const store = new Vuex.Store({
@@ -58,7 +58,11 @@ const store = new Vuex.Store({
     SET_TRANSLATION (state, translation) {
       state.translation = translation
     },
-  }
+  },
+
+  getters: {
+    selectedLanguage: state => state.language
+  },
 })
 
 //
