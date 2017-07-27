@@ -31,17 +31,18 @@ const store = new Vuex.Store({
       commit('SET_TRANSLATION', items.translation)
     },
     async REQUEST_DATA ({ commit }) {
-      await axios.get(`https://fotofluent-admin.herokuapp.com/translations.json`)
-        .then(response => {
-          const translation = _.sample(response.data)
-          commit('SET_TRANSLATION', translation)
-          document.body.style.backgroundImage = `url(${translation.word.image})`
-        })
-        .catch(err => console.log(err))
+      try {
+        const response = await axios.get(`https://fotofluent-admin.herokuapp.com/translations.json`)
+        const translation = _.sample(response.data)
+        commit('SET_TRANSLATION', translation)
+        document.body.style.backgroundImage = `url(${translation.word.image})`
+      } catch (err) {
+        console.log(err)
+      }
     },
     async REQUEST_TOP_SITES ({ commit }) {
-      await chromep.topSites.get()
-        .then(mostVisitedUrls => commit('SET_TOP_SITES', mostVisitedUrls.slice(0, 5)))
+      const mostVisitedUrls = await chromep.topSites.get()
+      commit('SET_TOP_SITES', mostVisitedUrls.slice(0, 5))
     },
   },
 

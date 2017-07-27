@@ -8,7 +8,6 @@
 </template>
 
 <script>
-  import store from '../store/index.js'
   import Translation from './translation.vue'
   import SearchBox from './search-box.vue'
   import TopSites from './top-sites.vue'
