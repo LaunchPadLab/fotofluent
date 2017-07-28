@@ -45,7 +45,10 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background: #f7f7f7;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f7f7f7;
     font-family: 'Arial', 'sans-serif';
   }
 

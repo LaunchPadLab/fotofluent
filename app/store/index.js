@@ -30,6 +30,7 @@ const store = new Vuex.Store({
         'topSites',
         'translation',
       ])
+      console.log(items.language)
       commit('SET_LANGUAGE', items.language || 'GER')
       commit('SET_TOP_SITES', items.topSites)
       commit('SET_TRANSLATION', items.translation)
