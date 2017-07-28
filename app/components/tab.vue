@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1 class="page-title">FotoFluent ({{ language }})</h1>
+    <h1 class="page-title">FotoFluent</h1>
+    <div class="flag-icon" v-if="translation && translation.language">
+      <img :src="flagIcon" alt="flag icon" />
+    </div>
     <SearchBox />
     <Translation />
     <TopSites />
@@ -34,7 +37,10 @@
     },
     
     computed: {
-      ...mapState([ 'translation', 'language' ])
+      ...mapState([ 'translation', 'language' ]),
+      flagIcon() {
+        return this.translation.language.flag.url
+      }
     }
   }
 </script>
@@ -55,5 +61,14 @@
   .translation {
     font-size: 48px;
     text-align: center;
+  }
+
+  .flag-icon {
+    margin: 5px 0 10px 0;
+  }
+
+  .flag-icon > img {
+    height: 60px;
+    width: auto;
   }
 </style>
