@@ -6,9 +6,7 @@
       <span v-if="!showTranslation">Show Translation</span>
       <span v-else>Hide Translation</span>
     </button>
-    <div v-if="showTranslation">
-      <p>{{ translation.word.word }}</p>
-    </div>
+    <p v-if="showTranslation">{{ translation.word.word }}</p>
   </div>
 </template>
 
