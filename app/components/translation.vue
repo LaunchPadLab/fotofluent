@@ -11,14 +11,16 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
-    props: {
-      translation: Object
-    },
     data () {
       return {
         showTranslation: false,
       }
+    },
+    computed: {
+      ...mapState(['translation'])
     },
     methods: {
       toggleTranslation () {
