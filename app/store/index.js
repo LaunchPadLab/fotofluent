@@ -8,13 +8,13 @@ Vue.use(Vuex)
 const chromep = new ChromePromise()
 
 export const LANGUAGES = [
-  { key: 'GERMAN', value: 'de-DE' },
-  { key: 'SPANISH', value: 'es-MX' }
+  { key: 'GERMAN', value: 'GER' },
+  { key: 'SPANISH', value: 'SPA' }
 ]
 
 const store = new Vuex.Store({
   state: {
-    language: 'DE',
+    language: 'GER',
     topSites: [],
     translation: {},
   },

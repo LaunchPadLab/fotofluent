@@ -53,10 +53,4 @@
     font-size: 48px;
     text-align: center;
   }
-  
-  .play-link {
-    color: blue;
-    font-size: 12px;
-    cursor: pointer;
-  }
 </style>
