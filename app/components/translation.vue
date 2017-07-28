@@ -7,7 +7,10 @@
         <span v-if="!showTranslation">Show Translation</span>
         <span v-else>Hide Translation</span>
       </button>
-      <p v-if="showTranslation">{{ translation.word.word }}</p>
+      <Playback />
+      <p v-if="showTranslation">
+        {{ translation.word.word }}
+      </p>
     </div>
     <div v-else>
       <p>Loading...</p>
@@ -16,6 +19,7 @@
 </template>
 
 <script>
+  import Playback from './Playback.vue'
   import { mapState } from 'vuex'
 
   export default {
@@ -23,6 +27,9 @@
       return {
         showTranslation: false,
       }
+    },
+    components: {
+      Playback
     },
     computed: {
       ...mapState(['translation'])
