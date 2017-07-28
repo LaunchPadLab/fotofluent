@@ -25,12 +25,13 @@ const store = new Vuex.Store({
 
   actions: {
     async HYDRATE_STATE ({ commit }) {
+      console.log(`action: call hydrate state`)
       const items = await chromep.storage.local.get([
         'language',
         'topSites',
         'translation',
       ])
-      console.log(items.language)
+      console.log('items log', items.language)
       commit('SET_LANGUAGE', items.language || 'GER')
       commit('SET_TOP_SITES', items.topSites)
       commit('SET_TRANSLATION', items.translation)
@@ -54,6 +55,7 @@ const store = new Vuex.Store({
 
   mutations: {
     SET_LANGUAGE (state, language) {
+      console.log(`mutation: setting language to ${language}`)
       state.language = language
       chromep.storage.local.set({ language })
     },
@@ -62,6 +64,8 @@ const store = new Vuex.Store({
       chromep.storage.local.set({ topSites })
     },
     SET_TRANSLATION (state, translation) {
+      console.log(`mutation: setting translation`)
+      console.log(translation)
       state.translation = translation
     },
   }
@@ -71,6 +75,7 @@ const store = new Vuex.Store({
 // Hydrate on app start.
 //
 const hydrate = async () => {
+  console.log('initial app hydrate')
   await store.dispatch('HYDRATE_STATE')
 }
 hydrate()
@@ -79,6 +84,7 @@ hydrate()
 // Hydrate whenever chrome state changes
 //
 const bindListeners = async () => {
+  console.log(`bindListeners: rehydrating state due to state change`)
   chrome.storage.onChanged.addListener(() => {
     store.dispatch('HYDRATE_STATE')
   })

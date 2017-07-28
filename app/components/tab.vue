@@ -2,7 +2,7 @@
   <div>
     <h1 class="page-title">FotoFluent ({{ language }})</h1>
     <SearchBox />
-    <Translation v-if="translation" />
+    <Translation />
     <TopSites />
   </div>
 </template>
