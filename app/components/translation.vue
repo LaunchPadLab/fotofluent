@@ -1,7 +1,6 @@
 <template>
   <div class="translation">
     <p>{{ translation.foreign_word }}</p>
-    <a class="play-link" v-on:click="playWord">Hear word</a>
 
     <button id="translate-btn" v-on:click="toggleTranslation">
       <span v-if="!showTranslation">Show Translation</span>
@@ -28,10 +27,6 @@
     methods: {
       toggleTranslation () {
         this.showTranslation = !this.showTranslation
-      },
-      playWord () {
-        const language = store.getters.selectedLanguage
-        chrome.tts.speak(translation.foreign_word, { lang: language })
       }
     }
   }
