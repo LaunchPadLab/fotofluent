@@ -8,13 +8,17 @@ Vue.use(Vuex)
 const chromep = new ChromePromise()
 
 export const LANGUAGES = [
-  { key: 'GERMAN', value: 'GER' },
-  { key: 'SPANISH', value: 'SPA' }
+  { key: 'GERMAN', value: 'de-DE' },
+  { key: 'SPANISH', value: 'es-ES' },
+  { key: 'ITALIAN', value: 'it-IT' },
+  { key: 'FRENCH', value: 'fr-FR' },
 ]
+
+const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/translations.json'
 
 const store = new Vuex.Store({
   state: {
-    language: 'GER',
+    language: 'de-DE',
     topSites: [],
     translation: {},
   },
@@ -32,7 +36,7 @@ const store = new Vuex.Store({
     },
     async REQUEST_DATA ({ commit }) {
       try {
-        const response = await axios.get(`https://fotofluent-admin.herokuapp.com/translations.json`)
+        const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
         const translation = sample(response.data)
         commit('SET_TRANSLATION', translation)
         document.body.style.backgroundImage = `url(${translation.word.image})`

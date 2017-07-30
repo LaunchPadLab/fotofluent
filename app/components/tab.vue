@@ -1,8 +1,11 @@
 <template>
   <div>
     <h1 class="page-title">FotoFluent</h1>
+    <div class="flag-icon" v-if="translation && translation.language">
+      <img :src="flagIcon" alt="flag icon" />
+    </div>
     <SearchBox />
-    <Translation :translation="translation" v-if="translation" />
+    <Translation />
     <TopSites />
   </div>
 </template>
@@ -34,7 +37,10 @@
     },
     
     computed: {
-      ...mapState([ 'translation' ])
+      ...mapState([ 'translation', 'language' ]),
+      flagIcon() {
+        return this.translation.language.flag.url
+      }
     }
   }
 </script>
@@ -45,12 +51,24 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background: #f7f7f7;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f7f7f7;
     font-family: 'Arial', 'sans-serif';
   }
 
   .translation {
     font-size: 48px;
     text-align: center;
+  }
+
+  .flag-icon {
+    margin: 5px 0 10px 0;
+  }
+
+  .flag-icon > img {
+    height: 60px;
+    width: auto;
   }
 </style>
