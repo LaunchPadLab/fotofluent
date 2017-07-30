@@ -36,7 +36,7 @@ const store = new Vuex.Store({
   state: {
     language: 'de-DE',
     topSites: [],
-    translation: {}
+    translation: {},
   },
 
   actions: {
