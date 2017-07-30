@@ -1,13 +1,7 @@
 <template>
   <div>
     <h1 class="page-title">FotoFluent</h1>
-
-    <div class="flag-icon" v-if="translation && translation.language">
-      <img :src="flagIcon" alt="flag icon" />
-    </div>
-    
     <LanguageOption v-for="lang in languages" :language="lang" key="lang" />
-
     <SearchBox />
     <Translation />
     <TopSites />
@@ -74,14 +68,5 @@
   .translation {
     font-size: 48px;
     text-align: center;
-  }
-
-  .flag-icon {
-    margin: 5px 0 10px 0;
-  }
-
-  .flag-icon > img {
-    height: 60px;
-    width: auto;
   }
 </style>
