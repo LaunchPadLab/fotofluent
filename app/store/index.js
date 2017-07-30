@@ -89,7 +89,6 @@ const store = new Vuex.Store({
 // Hydrate on app start.
 //
 const hydrate = async () => {
-  console.log(`app start: initial hydrate`)
   await store.dispatch('HYDRATE_STATE')
   await bindListeners()
   await store.dispatch('REQUEST_DATA')
