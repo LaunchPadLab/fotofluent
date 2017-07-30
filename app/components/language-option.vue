@@ -1,5 +1,5 @@
 <template>
-  <span @click="changeLanguage">
+  <span @click="setLanguage">
     <img 
       :src="flagIcon" 
       alt="flag icon" 
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
-    name: 'playback',
+    name: 'language-option',
 
     props: {
       language: Object
@@ -24,7 +24,7 @@
     },
 
     methods: {
-      changeLanguage () {
+      setLanguage () {
         this.$store.commit('SET_LANGUAGE', this.language.value)
       }
     }
