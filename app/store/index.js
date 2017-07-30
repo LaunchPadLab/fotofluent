@@ -11,22 +11,22 @@ export const LANGUAGES = [
   {
     key: 'GERMAN',
     value: 'de-DE',
-    image: 'https://fotofluent-admin.s3.amazonaws.com/uploads/language/flag/5/germany.png'
+    image: 'https://s3.amazonaws.com/fotofluent/germany.png'
   },
   {
     key: 'SPANISH',
     value: 'es-ES',
-    image: 'https://fotofluent-admin.s3.amazonaws.com/uploads/language/flag/6/spain.png'
+    image: 'https://s3.amazonaws.com/fotofluent/spain.png'
   },
   {
     key: 'ITALIAN',
     value: 'it-IT',
-    image: 'https://fotofluent-admin.s3.amazonaws.com/uploads/language/flag/7/italy.png'
+    image: 'https://s3.amazonaws.com/fotofluent/italy.png'
   },
   {
     key: 'FRENCH',
     value: 'fr-FR',
-    image: 'https://fotofluent-admin.s3.amazonaws.com/uploads/language/flag/8/france.png'
+    image: 'https://s3.amazonaws.com/fotofluent/france.png'
   },
 ]
 
