@@ -8,17 +8,17 @@ Vue.use(Vuex)
 const chromep = new ChromePromise()
 
 export const LANGUAGES = [
-  { key: 'GERMAN', value: 'GER' },
-  { key: 'SPANISH', value: 'SPA' },
-  { key: 'ITALIAN', value: 'ITA' },
-  { key: 'FRENCH', value: 'FRA' },
+  { key: 'GERMAN', value: 'de-DE' },
+  { key: 'SPANISH', value: 'es-ES' },
+  { key: 'ITALIAN', value: 'it-IT' },
+  { key: 'FRENCH', value: 'fr-FR' },
 ]
 
 const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/translations.json'
 
 const store = new Vuex.Store({
   state: {
-    language: 'GER',
+    language: 'de-DE',
     topSites: [],
     translation: {},
   },
