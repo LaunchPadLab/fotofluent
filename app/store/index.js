@@ -24,7 +24,8 @@ const store = new Vuex.Store({
   },
 
   actions: {
-    async HYDRATE_STATE ({ commit }) {
+    async HYDRATE_STATE ({ commit, dispatch }) {
+      console.log(`action: calling hydrate state`)
       const items = await chromep.storage.local.get([
         'language',
         'topSites',
@@ -32,9 +33,10 @@ const store = new Vuex.Store({
       ])
       commit('SET_LANGUAGE', items.language)
       commit('SET_TOP_SITES', items.topSites)
-      commit('SET_TRANSLATION', items.translation)
+      await dispatch('REQUEST_DATA')
     },
     async REQUEST_DATA ({ commit }) {
+      console.log(`action: requesting data with ${store.state.language}`)
       try {
         const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
         const translation = sample(response.data)
@@ -45,6 +47,7 @@ const store = new Vuex.Store({
       }
     },
     async REQUEST_TOP_SITES ({ commit }) {
+      console.log(`action: requesting top sites`)
       const mostVisitedUrls = await chromep.topSites.get()
       commit('SET_TOP_SITES', mostVisitedUrls.slice(0, 5))
     },
@@ -52,14 +55,17 @@ const store = new Vuex.Store({
 
   mutations: {
     SET_LANGUAGE (state, language) {
+      console.log(`mutation: setting language to ${language}`)
       state.language = language
       chromep.storage.local.set({ language })
     },
     SET_TOP_SITES (state, topSites) {
+      console.log(`mutation: setting top sites`)
       state.topSites = topSites
       chromep.storage.local.set({ topSites })
     },
     SET_TRANSLATION (state, translation) {
+      console.log('mutation: setting translation', translation)
       state.translation = translation
     },
   },
@@ -73,7 +79,10 @@ const store = new Vuex.Store({
 // Hydrate on app start.
 //
 const hydrate = async () => {
+  console.log(`app start: initial hydrate`)
   await store.dispatch('HYDRATE_STATE')
+  await bindListeners()
+  await store.dispatch('REQUEST_DATA')
 }
 hydrate()
 
@@ -81,10 +90,11 @@ hydrate()
 // Hydrate whenever chrome state changes
 //
 const bindListeners = async () => {
+  console.log(`bindingListeners called`)
   chrome.storage.onChanged.addListener(() => {
+    console.log(`state was updated, will call action to hydrate`)
     store.dispatch('HYDRATE_STATE')
   })
 }
-bindListeners()
 
 export default store
