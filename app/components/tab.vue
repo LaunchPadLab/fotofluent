@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="page-title">FotoFluent</h1>
-    <LanguageOption v-for="lang in languages" :language="lang" key="lang" />
+    <LanguageOption v-for="lang in languages" :language="lang" :key="lang.key" />
     <SearchBox />
     <Translation />
     <TopSites />
@@ -26,7 +26,6 @@
     },
 
     mounted () {
-      // this.requestData()
       this.requestTopSites()
     },
 
@@ -38,7 +37,6 @@
 
     methods: {
       ...mapActions({ 
-        requestData: 'REQUEST_DATA',
         requestTopSites: 'REQUEST_TOP_SITES',
       })
     },
