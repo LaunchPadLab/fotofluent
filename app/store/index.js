@@ -91,7 +91,6 @@ const store = new Vuex.Store({
 const hydrate = async () => {
   await store.dispatch('HYDRATE_STATE')
   await bindListeners()
-  await store.dispatch('REQUEST_DATA')
 }
 hydrate()
 
