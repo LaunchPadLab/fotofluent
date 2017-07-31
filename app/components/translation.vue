@@ -7,11 +7,14 @@
         <span v-if="!showTranslation">Show Translation</span>
         <span v-else>Hide Translation</span>
       </button>
+
       <Playback />
+
       <p v-if="showTranslation">
         {{ translation.word.word }}
       </p>
     </div>
+    
     <div v-else>
       <p>Loading...</p>
     </div>

@@ -8,10 +8,26 @@ Vue.use(Vuex)
 const chromep = new ChromePromise()
 
 export const LANGUAGES = [
-  { key: 'GERMAN', value: 'de-DE' },
-  { key: 'SPANISH', value: 'es-ES' },
-  { key: 'ITALIAN', value: 'it-IT' },
-  { key: 'FRENCH', value: 'fr-FR' },
+  {
+    key: 'GERMAN',
+    value: 'de-DE',
+    image: 'https://s3.amazonaws.com/fotofluent/germany.png'
+  },
+  {
+    key: 'SPANISH',
+    value: 'es-ES',
+    image: 'https://s3.amazonaws.com/fotofluent/spain.png'
+  },
+  {
+    key: 'ITALIAN',
+    value: 'it-IT',
+    image: 'https://s3.amazonaws.com/fotofluent/italy.png'
+  },
+  {
+    key: 'FRENCH',
+    value: 'fr-FR',
+    image: 'https://s3.amazonaws.com/fotofluent/france.png'
+  },
 ]
 
 const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/translations.json'
@@ -24,15 +40,15 @@ const store = new Vuex.Store({
   },
 
   actions: {
-    async HYDRATE_STATE ({ commit }) {
+    async HYDRATE_STATE ({ commit, dispatch }) {
       const items = await chromep.storage.local.get([
         'language',
         'topSites',
         'translation',
       ])
-      commit('SET_LANGUAGE', items.language)
+      commit('SET_LANGUAGE', items.language || store.state.language)
       commit('SET_TOP_SITES', items.topSites)
-      commit('SET_TRANSLATION', items.translation)
+      await dispatch('REQUEST_DATA')
     },
     async REQUEST_DATA ({ commit }) {
       try {
@@ -74,6 +90,7 @@ const store = new Vuex.Store({
 //
 const hydrate = async () => {
   await store.dispatch('HYDRATE_STATE')
+  await bindListeners()
 }
 hydrate()
 
@@ -85,6 +102,5 @@ const bindListeners = async () => {
     store.dispatch('HYDRATE_STATE')
   })
 }
-bindListeners()
 
 export default store
