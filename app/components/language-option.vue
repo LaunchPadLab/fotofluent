@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  import store from '../store/index.js'
   import { mapState, mapMutations } from 'vuex'
 
   export default {
@@ -25,7 +26,7 @@
 
     methods: {
       setLanguage () {
-        this.$store.commit('SET_LANGUAGE', this.language.value)
+        store.commit('SET_LANGUAGE', this.language.value)
       }
     }
   }
