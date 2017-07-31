@@ -33,9 +33,8 @@ gulp.task('chromereload', (cb) => {
   // Check out ./tasks/scripts.js for further info.
   gulp.watch('app/manifest.json', ['manifest'])
   gulp.watch('app/components/**/*.vue', ['pages', 'scripts'])
-  // gulp.watch('app/styles/**/*.css', ['styles:css'])
-  // gulp.watch('app/styles/**/*.less', ['styles:less'])
-  // gulp.watch('app/styles/**/*.scss', ['styles:sass'])
+  gulp.watch('app/styles/**/*.css', ['styles:css'])
+  gulp.watch('app/styles/**/*.scss', ['styles:sass'])
   gulp.watch('app/pages/**/*.html', ['pages'])
   // gulp.watch('app/_locales/**/*', ['locales'])
   // gulp.watch('app/images/**/*', ['images'])
