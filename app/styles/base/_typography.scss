@@ -1,0 +1,18 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+
+// feel free to change this!
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600');
+
+body {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f7f7f7;
+}

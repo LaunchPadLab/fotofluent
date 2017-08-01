@@ -32,7 +32,7 @@
   }
 </script>
 
-<style>
+<style scoped="true" lang="css">
   .flag-icon {
     margin-bottom: 20px;
     height: 30px;
