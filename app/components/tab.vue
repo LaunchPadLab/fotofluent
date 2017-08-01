@@ -50,19 +50,7 @@
   }
 </script>
 
-<style>
-  body {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #f7f7f7;
-    font-family: 'Arial', 'sans-serif';
-  }
-
+<style lang="css">
   .translation {
     font-size: 48px;
     text-align: center;
