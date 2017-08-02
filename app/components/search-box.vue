@@ -12,7 +12,7 @@
     <label for="search-box">
       <!-- <span class="glyphicon glyphicon-search search-icon" /> -->
     </label>
-    <button style="display:none;" type="submit">Search</button>
+    <button id="search-submit" type="submit">Search</button>
   </form>
 </template>
 
