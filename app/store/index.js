@@ -48,7 +48,6 @@ const store = new Vuex.Store({
       ])
       commit('SET_LANGUAGE', items.language || store.state.language)
       commit('SET_TOP_SITES', items.topSites)
-      await dispatch('REQUEST_DATA')
     },
     async REQUEST_DATA ({ commit }) {
       try {
@@ -63,6 +62,13 @@ const store = new Vuex.Store({
     async REQUEST_TOP_SITES ({ commit }) {
       const mostVisitedUrls = await chromep.topSites.get()
       commit('SET_TOP_SITES', mostVisitedUrls.slice(0, 5))
+    },
+    async UPDATE_LANGUAGE ({ commit, dispatch }, language) {
+      await commit('SET_LANGUAGE', language)
+
+      if (language !== store.language) {
+        await dispatch('REQUEST_DATA')
+      }
     },
   },
 
@@ -90,6 +96,7 @@ const store = new Vuex.Store({
 //
 const hydrate = async () => {
   await store.dispatch('HYDRATE_STATE')
+  await store.dispatch('REQUEST_DATA')
   await bindListeners()
 }
 hydrate()
