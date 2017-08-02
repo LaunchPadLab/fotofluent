@@ -4,7 +4,7 @@
       :src="flagIcon" 
       alt="flag icon" 
       class="flag-icon"
-      :class="{ large: language.value == storeLanguage }" />
+      :class="{ large: isCurrentLanguage }" />
   </span>
 </template>
 
