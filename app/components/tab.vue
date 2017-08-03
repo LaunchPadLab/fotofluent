@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="logo" src="https://s2.postimg.org/676ef2ec9/fhotofluent-logo.png">
+    <img class="logo" src="/images/logo.png">
     <LanguageOption v-for="lang in languages" :language="lang" :key="lang.key" />
     <SearchBox />
     <Translation />
