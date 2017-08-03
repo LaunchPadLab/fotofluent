@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="page-title">FotoFluent</h1>
+    <img class="logo" src="https://s2.postimg.org/676ef2ec9/fhotofluent-logo.png">
     <LanguageOption v-for="lang in languages" :language="lang" :key="lang.key" />
     <SearchBox />
     <Translation />
@@ -36,11 +36,11 @@
     },
 
     methods: {
-      ...mapActions({ 
+      ...mapActions({
         requestTopSites: 'REQUEST_TOP_SITES',
       })
     },
-    
+
     computed: {
       ...mapState([ 'translation', 'language' ]),
       flagIcon() {
