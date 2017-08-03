@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <button @click="triggerAudio" v-if="language">
-      Play Audio Translation
-    </button>
-  </div>
+  <button id="playback-btn" @click="triggerAudio" v-if="language">
+    Play Audio
+  </button>
 </template>
 
 <script>
@@ -15,12 +13,12 @@
     computed: {
       ...mapState(['translation', 'language'])
     },
-    
+
     methods: {
       triggerAudio () {
         chrome.tts.speak(
-          this.translation.foreign_word, { 
-            'lang': this.language, 
+          this.translation.foreign_word, {
+            'lang': this.language,
             'rate': 0.6
           }
         )
