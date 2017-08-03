@@ -10,9 +10,7 @@
       v-model="search"
       placeholder="Search Google..." />
     <label for="search-box">
-      <!-- <span class="search-icon"> -->
-        <img src="/images/search.svg" class="search-icon"/>
-      <!-- </span> -->
+      <img src="/images/search.svg" class="search-icon"/>
     </label>
     <button id="search-submit" type="submit">Search</button>
   </form>
