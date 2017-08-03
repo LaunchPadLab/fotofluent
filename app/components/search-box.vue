@@ -1,10 +1,18 @@
 <template>
-  <form action="?" @submit="onSearch" v-on:submit.prevent="onSearch">
+  <form 
+    class="search-container"
+    @submit="onSearch" 
+    v-on:submit.prevent="onSearch">
     <input 
+      id="search-box"
+      class="search-box"
       type="text" 
       v-model="search"
       placeholder="Search Google..." />
-    <button style="display:none;" type="submit">Search</button>
+    <label for="search-box">
+      <img src="/images/search.svg" class="search-icon"/>
+    </label>
+    <button id="search-submit" type="submit">Search</button>
   </form>
 </template>
 
