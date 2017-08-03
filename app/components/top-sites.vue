@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h3>Top Sites</h3>  
+  <div class="top-sites-container">
+    <h3>My Top Sites</h3>
     <ul>
       <li v-for="site in topSites"><a :href="site.url">{{ site.title }}</a></li>
     </ul>

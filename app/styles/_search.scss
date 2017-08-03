@@ -5,11 +5,12 @@ $tl: 0.6s;
   width: 40px;height: 40px;
   border-radius: 20px;border: none;
   cursor: pointer;
-  background: rgb(235, 235, 235);
+  background: #FFFFFF;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   & + label .search-icon {    color: black    }
   &:hover {
     color: white;
-    background: rgb(200, 200, 200);
+    background: #FFFFFF;
     box-shadow: 0 0 0 5px rgb(61, 71, 82);
     & + label .search-icon {    color: white    }
   }
@@ -21,7 +22,7 @@ $tl: 0.6s;
     cursor: text;
     width: 300px;
     border-radius: auto;
-    background: rgb(235, 235, 235);
+    background: #FFFFFF;
     color: black;
     & + label .search-icon {    color: black;    }
   }
@@ -39,4 +40,8 @@ $tl: 0.6s;
   left: -32px;
   color: white;
   cursor: pointer;
+}
+
+.search-container {
+  margin: 20px;
 }

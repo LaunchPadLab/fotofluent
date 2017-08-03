@@ -1,7 +1,7 @@
 <template>
   <div class="translation">
     <div v-if="translation">
-      <p>{{ translation.foreign_word }}</p>
+      <p>{{ translation.foreign_word }}</p><br>
 
       <button id="translate-btn" v-on:click="toggleTranslation">
         <span v-if="!showTranslation">Show Translation</span>
@@ -10,7 +10,7 @@
 
       <Playback />
 
-      <p v-if="showTranslation">
+      <br><p v-if="showTranslation">
         {{ translation.word.word }}
       </p>
     </div>

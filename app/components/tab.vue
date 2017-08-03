@@ -1,11 +1,15 @@
 <template>
   <div>
-    <img class="logo" src="/images/logo.png">
-    <LanguageOption v-for="lang in languages" :language="lang" :key="lang.key" />
     <SearchBox />
-    <Translation />
     <TopSites />
+    <Translation />
+
+    <footer>
+      <img class="logo" src="/images/logo-white.svg">
+      <div class="choose-language"><LanguageOption v-for="lang in languages" :language="lang" :key="lang.key" /></div>
+    </footer>
   </div>
+
 </template>
 
 <script>

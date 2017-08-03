@@ -1,11 +1,9 @@
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 
 // feel free to change this!
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body {
-  font-family: "Roboto";
-  font-weight: 300;
   font-size: 1rem;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -14,5 +12,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #f7f7f7;
+  background-color: #2EE59D;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, button {
+  color: #404040;
+  font-family: "Montserrat";
+  font-weight: 300;
 }
