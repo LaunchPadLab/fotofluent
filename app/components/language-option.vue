@@ -3,7 +3,8 @@
     <img 
       :src="flagIcon" 
       alt="flag icon" 
-      class="flag-icon" />
+      class="flag-icon"
+      :class="{ large: isCurrentLanguage }" />
   </span>
 </template>
 
@@ -19,14 +20,20 @@
     },
 
     computed: {
+      ...mapState({
+        storeLanguage: 'language'
+      }),
       flagIcon () {
         return this.language.image
-      }
+      },
+      isCurrentLanguage () {
+        return this.language.value == this.storeLanguage
+      },
     },
 
     methods: {
       setLanguage () {
-        store.commit('SET_LANGUAGE', this.language.value)
+        store.dispatch('UPDATE_LANGUAGE', this.language.value)
       }
     }
   }
@@ -36,6 +43,11 @@
   .flag-icon {
     margin-bottom: 20px;
     height: 30px;
+    width: auto;
+  }
+
+  .large {
+    height: 40px;
     width: auto;
   }
 </style>
