@@ -30,7 +30,6 @@ footer {
   vertical-align: middle;
 }
 
-
 .top-sites-container {
   width: 300px;
   float: right;
@@ -42,7 +41,8 @@ footer {
   background: white;
   padding: 20px;
   opacity: .9;
-h3{
+
+h3 {
   position: relative;
   display: inline-block;
   font-size: 20px;
@@ -53,7 +53,8 @@ h3{
   margin: 0;
   font-size: 16px;
 }
-h3:after{
+
+h3:after {
   content:"";
   border: 10px solid transparent;
   border-top-color: #404040;
@@ -61,42 +62,43 @@ h3:after{
   right: -185px;
   top: 4px;
 }
-h3:hover + ul{
+
+h3:hover + ul {
   display: block;
 }
-ul{
- // background: #eee;
- // border: 1px solid #ddd;
- // border-radius: 1%;
+
+ul {
   display: none;
   position: relative;
   top: -1em;
   padding-left: 0;
   margin-bottom: -20px;
 }
-ul:hover{
+
+ul:hover {
   display: block;
 }
-li{
+
+li {
  padding: 5px 0;
  border-top: 1px solid #fff;
  border-bottom: 1px solid #ddd;
  cursor: pointer;
  list-style-type: none;
 }
+
 a {
   text-decoration: none;
 }
-li:first-child{border-top: none; padding-top: 20px;}
-li:last-child{border-bottom: none;}
-//li:hover{background: linear-gradient(#eee,#ddd);}
+
+li:first-child { 
+  border-top: none; padding-top: 20px;
 }
 
-
 .translation {
+
   p {
     display: inline-block;
-    //background: #ee4035;
     background: #FFFFFF;
     padding: 0.25em;
     margin-bottom: 30px;
