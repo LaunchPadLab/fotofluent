@@ -2,7 +2,7 @@
   <form 
     class="search-container"
     @submit="onSearch" 
-    v-on:submit.prevent="onSearch">
+    :submit.prevent="onSearch">
     <input 
       id="search-box"
       class="search-box"
@@ -17,11 +17,9 @@
 </template>
 
 <script>
-  import { googleSearch } from '../lib/helpers.js'
+  import { googleSearchUrl } from 'helpers'
 
   export default {
-    name: 'search-box',
-    
     data () {
       return {
         search: '',
@@ -29,7 +27,10 @@
     },
 
     methods: {
-      onSearch () { googleSearch(this.search) }
+      onSearch () { 
+        const url = googleSearchUrl(this.search)
+        chrome.tabs.getCurrent(tab => chrome.tabs.update(tab.id, { url }))
+      }
     }
   }
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <button id="playback-btn" @click="triggerAudio" v-if="language">
+  <button 
+    id="playback-btn" 
+    @click="triggerAudio" 
+    v-if="language">
     Play Audio
   </button>
 </template>
@@ -8,10 +11,8 @@
   import { mapState } from 'vuex'
 
   export default {
-    name: 'playback',
-
     computed: {
-      ...mapState(['translation', 'language'])
+      ...mapState([ 'translation', 'language' ])
     },
 
     methods: {

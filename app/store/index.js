@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import ChromePromise from 'chrome-promise'
 import axios from 'axios'
-import { sample } from '../lib/utils.js'
+import { sample } from 'utils'
 
 Vue.use(Vuex)
 const chromep = new ChromePromise()

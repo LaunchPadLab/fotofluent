@@ -3,18 +3,15 @@
     <img 
       :src="flagIcon" 
       alt="flag icon" 
-      class="flag-icon"
-      :class="{ large: isCurrentLanguage }" />
+      :class="['flag-icon', { large: isCurrentLanguage }]" />
   </span>
 </template>
 
 <script>
-  import store from '../store/index.js'
   import { mapState, mapMutations } from 'vuex'
+  import store from 'store'
 
   export default {
-    name: 'language-option',
-
     props: {
       language: Object
     },

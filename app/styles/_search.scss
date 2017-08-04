@@ -26,7 +26,9 @@ $tl: 0.6s;
     color: black;
     & + label .search-icon {    color: black;    }
   }
-  &:not(:focus) {    text-indent:-5000px;    } // for more-graceful falling back (:not browsers likely support indent)
+  &:not(:focus) { 
+    text-indent:-5000px; // for more-graceful falling back (:not browsers likely support indent)
+  } 
 }
 
 #search-submit {

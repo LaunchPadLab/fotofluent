@@ -6,8 +6,15 @@
       <ul>
         <li>
           <h2>Choose a language</h2>
-          <select id="language" :value="language" @change="onLanguageSelect">
-            <option v-for="lang in LANGUAGES" :value="lang.value">{{ lang.key }}</option>
+          <select 
+            id="language" 
+            :value="language" 
+            @change="onLanguageSelect">
+            <option 
+              v-for="lang in LANGUAGES" 
+              :value="lang.value">
+              {{ lang.key }}
+            </option>
           </select>
         </li>
       </ul>
@@ -16,12 +23,10 @@
 </template>
 
 <script>
-  import store, { LANGUAGES } from '../store/index.js'
+  import store, { LANGUAGES } from 'store'
   import { mapState } from 'vuex'
 
   export default {
-    name: 'options',
-    
     data: () => ({
       LANGUAGES
     }),

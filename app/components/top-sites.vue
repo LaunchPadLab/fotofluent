@@ -2,7 +2,11 @@
   <div class="top-sites-container">
     <h3>My Top Sites</h3>
     <ul>
-      <li v-for="site in topSites"><a :href="site.url">{{ site.title }}</a></li>
+      <li v-for="site in topSites">
+        <a :href="site.url">
+          {{ site.title }}
+        </a>
+      </li>
     </ul>
   </div>
 </template>
@@ -11,8 +15,6 @@
   import { mapState } from 'vuex'
 
   export default {
-    name: 'top-sites',
-
     computed: {
       ...mapState([ 'topSites' ])
     }
