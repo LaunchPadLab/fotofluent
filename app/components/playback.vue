@@ -12,7 +12,7 @@
 
   export default {
     computed: {
-      ...mapState(['translation', 'language'])
+      ...mapState([ 'translation', 'language' ])
     },
 
     methods: {
