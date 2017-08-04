@@ -5,8 +5,13 @@
     <Translation />
 
     <footer>
-      <img class="logo" src="/images/logo-white.svg">
-      <div class="choose-language"><LanguageOption v-for="lang in languages" :language="lang" :key="lang.key" /></div>
+      <img class="logo" src="/images/logo-white.svg" />
+      <div class="choose-language">
+        <LanguageOption 
+          v-for="lang in languages" 
+          :language="lang" 
+          :key="lang.key" />
+      </div>
     </footer>
   </div>
 
@@ -21,7 +26,6 @@
   import { mapActions, mapState } from 'vuex'
 
   export default {
-    name: 'tab',
     components: {
       Translation,
       SearchBox,

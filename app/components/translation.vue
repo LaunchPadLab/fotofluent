@@ -10,7 +10,8 @@
 
       <Playback />
 
-      <br><p v-if="showTranslation">
+      <br>
+      <p v-if="showTranslation">
         {{ translation.word.word }}
       </p>
     </div>

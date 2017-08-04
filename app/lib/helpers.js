@@ -1,5 +1,4 @@
-export function googleSearch (query) {
-  const baseUrl = 'https://google.com/search?q='
-  const url = `${baseUrl}${query}`
-  chrome.tabs.getCurrent(tab => chrome.tabs.update(tab.id, { url }))
+export function googleSearchUrl (query) {
+  const baseUrl = 'https://google.com/search'
+  return `${baseUrl}?q=${query}`
 }
