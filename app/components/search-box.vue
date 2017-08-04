@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import { googleSearchUrl } from '../lib/helpers.js'
+  import { googleSearchUrl } from 'helpers'
 
   export default {
     data () {

@@ -41,6 +41,7 @@ footer {
   background: white;
   padding: 20px;
   opacity: .9;
+}
 
 h3 {
   position: relative;
@@ -55,7 +56,7 @@ h3 {
 }
 
 h3:after {
-  content:"";
+  content: "";
   border: 10px solid transparent;
   border-top-color: #404040;
   position: absolute;
@@ -92,7 +93,8 @@ a {
 }
 
 li:first-child { 
-  border-top: none; padding-top: 20px;
+  border-top: none; 
+  padding-top: 20px;
 }
 
 .translation {

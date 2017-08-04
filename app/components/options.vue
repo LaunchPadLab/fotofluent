@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import store, { LANGUAGES } from '../store/index.js'
+  import store, { LANGUAGES } from 'store'
   import { mapState } from 'vuex'
 
   export default {

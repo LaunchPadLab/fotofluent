@@ -8,8 +8,8 @@
 </template>
 
 <script>
-  import store from '../store/index.js'
   import { mapState, mapMutations } from 'vuex'
+  import store from 'store'
 
   export default {
     props: {

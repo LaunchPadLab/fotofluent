@@ -18,12 +18,12 @@
 </template>
 
 <script>
+  import { mapActions, mapState } from 'vuex'
+  import { LANGUAGES } from 'store'
   import Translation from './translation.vue'
   import SearchBox from './search-box.vue'
   import TopSites from './top-sites.vue'
   import LanguageOption from './language-option.vue'
-  import { LANGUAGES } from '../store/index.js'
-  import { mapActions, mapState } from 'vuex'
 
   export default {
     components: {

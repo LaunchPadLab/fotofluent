@@ -23,8 +23,8 @@
 </template>
 
 <script>
-  import Playback from './Playback.vue'
   import { mapState } from 'vuex'
+  import Playback from './playback.vue'
 
   export default {
     data () {

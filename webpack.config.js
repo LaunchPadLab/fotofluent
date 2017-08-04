@@ -2,6 +2,11 @@ import webpack from 'webpack'
 import args from './tasks/lib/args'
 
 const ENV = args.production ? 'production' : 'development'
+const path = require('path')
+function resolveApp (relativePath) {
+  return path.resolve(__dirname, relativePath)
+}
+const appSrc = resolveApp('app')
 
 module.exports = {
   devtool: args.sourcemaps ? 'inline-source-map' : null,
@@ -52,5 +57,12 @@ module.exports = {
       '.vue',
       '.js'
     ]
+  },
+  resolve: {
+    alias: {
+      'utils': path.join(appSrc, 'lib', 'utils'),
+      'helpers': path.join(appSrc, 'lib', 'helpers'),
+      'store': path.join(appSrc, 'store', 'index')
+    }
   }
 }
