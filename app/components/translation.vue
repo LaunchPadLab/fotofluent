@@ -1,6 +1,6 @@
 <template>
   <div class="translation">
-    <div v-if="translation">
+    <div v-if="translation && translation.foreign_word">
       <p>{{ translation.foreign_word }}</p><br>
 
       <button id="translate-btn" v-on:click="toggleTranslation">
