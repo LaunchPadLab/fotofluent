@@ -3,11 +3,11 @@
     <div v-if="translation && translation.foreign_word">
       <p>{{ translation.foreign_word }}</p><br>
       
-      <button id="translate-btn"@click="next">
+      <button id="translate-btn" @click="next">
         Next Word
       </button>
 
-      <button id="translate-btn"@click="toggleTranslation">
+      <button id="translate-btn" @click="toggleTranslation">
         <span v-if="!showTranslation">Show Translation</span>
         <span v-else>Hide Translation</span>
       </button>
