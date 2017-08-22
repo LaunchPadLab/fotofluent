@@ -53,7 +53,7 @@
 
       languageName () {
         const languageOptions = this.languages
-        return languageOptions.find(option => option.value == this.language).key
+        return languageOptions.find(option => option.value === this.language).key
       },
     }
   }
