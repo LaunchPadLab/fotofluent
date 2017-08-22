@@ -108,6 +108,14 @@ li:first-child {
 }
 
 .language-text {
-  background: #FFFFFF;
-  width: 300px;
+  color: #FFFFFF;
+  font-size: 20px;
+  width: 25%;
+  top: 0;
+  padding: 15px;
+  background-color: #404040;
+  opacity: .9;
+  -webkit-box-shadow: -1px -4px 44px -8px rgba(0,0,0,0.57);
+  -moz-box-shadow: -1px -4px 44px -8px rgba(0,0,0,0.57);
+  box-shadow: -1px -4px 44px -8px rgba(0,0,0,0.57);
 }

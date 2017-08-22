@@ -9,22 +9,22 @@ const chromep = new ChromePromise()
 
 export const LANGUAGES = [
   {
-    key: 'GERMAN',
+    key: 'German',
     value: 'de-DE',
     image: 'https://s3.amazonaws.com/fotofluent/germany.png'
   },
   {
-    key: 'SPANISH',
+    key: 'Spanish',
     value: 'es-ES',
     image: 'https://s3.amazonaws.com/fotofluent/spain.png'
   },
   {
-    key: 'ITALIAN',
+    key: 'Italian',
     value: 'it-IT',
     image: 'https://s3.amazonaws.com/fotofluent/italy.png'
   },
   {
-    key: 'FRENCH',
+    key: 'French',
     value: 'fr-FR',
     image: 'https://s3.amazonaws.com/fotofluent/france.png'
   },

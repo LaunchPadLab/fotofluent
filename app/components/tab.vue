@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="language-text">You're learning {{ languageName }}</h2>
+    <div class="language-text">You're learning {{ languageName }}</div>
     <Translation />
 
     <footer>
