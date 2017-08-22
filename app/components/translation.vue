@@ -1,9 +1,13 @@
 <template>
   <div class="translation">
-    <div v-if="translation">
+    <div v-if="translation && translation.foreign_word">
       <p>{{ translation.foreign_word }}</p><br>
+      
+      <button id="translate-btn" @click="next">
+        Next Word
+      </button>
 
-      <button id="translate-btn" v-on:click="toggleTranslation">
+      <button id="translate-btn" @click="toggleTranslation">
         <span v-if="!showTranslation">Show Translation</span>
         <span v-else>Hide Translation</span>
       </button>
@@ -23,7 +27,8 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import store from 'store'
+  import { mapState, mapActions } from 'vuex'
   import Playback from './playback.vue'
 
   export default {
@@ -39,6 +44,9 @@
       ...mapState(['translation'])
     },
     methods: {
+      ...mapActions({
+        next: 'REQUEST_DATA',
+      }),
       toggleTranslation () {
         this.showTranslation = !this.showTranslation
       }
