@@ -1,7 +1,6 @@
 <template>
   <div>
-    <SearchBox />
-    <TopSites />
+    <h2 class="language-text">You're learning {{ languageName }}</h2>
     <Translation />
 
     <footer>
@@ -51,9 +50,11 @@
 
     computed: {
       ...mapState([ 'translation', 'language' ]),
-      flagIcon() {
-        return this.translation.language.flag.url
-      }
+
+      languageName () {
+        const languageOptions = this.languages
+        return languageOptions.find(option => option.value === this.language).key
+      },
     }
   }
 </script>
