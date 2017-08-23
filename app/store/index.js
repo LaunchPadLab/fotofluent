@@ -52,7 +52,7 @@ const store = new Vuex.Store({
     },
     async REQUEST_DATA ({ commit }) {
       try {
-        commit('HIDE_TRANSLATION', false)
+        commit('HIDE_TRANSLATION')
         const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
         const translation = sample(response.data)
         commit('SET_TRANSLATION', translation)
