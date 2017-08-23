@@ -1,7 +1,7 @@
 {
   "name": "FotoFluent",
   "description": "A Chrome extension that helps you learn a new language",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "npm run dev:chrome",
