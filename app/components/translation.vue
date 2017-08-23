@@ -13,7 +13,6 @@
       </button>
 
       <Playback />
-
       <br>
       <p v-if="showTranslation">
         {{ translation.word.word }}
@@ -32,23 +31,18 @@
   import Playback from './playback.vue'
 
   export default {
-    data () {
-      return {
-        showTranslation: false,
-      }
-    },
     components: {
       Playback
     },
     computed: {
-      ...mapState(['translation'])
+      ...mapState(['translation', 'showTranslation'])
     },
     methods: {
       ...mapActions({
         next: 'REQUEST_DATA',
       }),
       toggleTranslation () {
-        this.showTranslation = !this.showTranslation
+        store.commit('TOGGLE_TRANSLATION')
       }
     }
   }
