@@ -37,6 +37,7 @@ const store = new Vuex.Store({
     language: 'de-DE',
     topSites: [],
     translation: {},
+    showTranslation: false
   },
 
   actions: {
@@ -51,6 +52,7 @@ const store = new Vuex.Store({
     },
     async REQUEST_DATA ({ commit }) {
       try {
+        commit('HIDE_TRANSLATION')
         const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
         const translation = sample(response.data)
         commit('SET_TRANSLATION', translation)
@@ -84,6 +86,12 @@ const store = new Vuex.Store({
     SET_TRANSLATION (state, translation) {
       state.translation = translation
     },
+    TOGGLE_TRANSLATION (state) {
+      state.showTranslation = !state.showTranslation
+    },
+    HIDE_TRANSLATION (state) {
+      state.showTranslation = false
+    }
   },
 
   getters: {
