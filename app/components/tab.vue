@@ -7,7 +7,7 @@
       <img class="logo" src="/images/logo-white.svg" />
       <div class="choose-language">
         <LanguageOption 
-          v-for="lang in languages" 
+          v-for="lang in languages"
           :language="lang" 
           :key="lang.key" />
       </div>
