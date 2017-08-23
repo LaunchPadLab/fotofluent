@@ -3,6 +3,7 @@
     <img 
       :src="flagIcon" 
       alt="flag icon" 
+      v-tooltip="languageName"
       :class="['flag-icon', { large: isCurrentLanguage }]" />
   </span>
 </template>
@@ -24,8 +25,11 @@
         return this.language.image
       },
       isCurrentLanguage () {
-        return this.language.value == this.storeLanguage
+        return this.language.value === this.storeLanguage
       },
+      languageName () {
+        return this.language.key
+      }
     },
 
     methods: {
