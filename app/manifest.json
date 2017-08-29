@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "FotoFluent",
-  "description": "A Chrome extension that helps you learn a new language!",
+  "description": "Learn a new language, and expand your vocabulary with FotoFluent!",
   "version": "1.0.0",
   "author": "Diana Camacho, Rachel Killackey",
   "icons": {
