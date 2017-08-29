@@ -1,5 +1,5 @@
-# FotoFluent 
-![FotoFluent Logo](/promo/fotofluent-logo.png) A Chrome extension that helps you learn a new language!
+# FotoFluent ![FotoFluent Logo](/promo/fotofluent-logo.png)
+A Chrome extension that helps you learn a new language!
 
 ![FotoFluent Screenshot](/promo/fotofluent-cake.png)
 
