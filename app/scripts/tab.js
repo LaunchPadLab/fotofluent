@@ -14,8 +14,6 @@ const app = new Vue({
   el: '#app',
   store,
   render (h) {
-    return (
-      <Tab />
-    )
+    return <Tab />
   }
 })

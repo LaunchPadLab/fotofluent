@@ -4,6 +4,9 @@
   "description": "A Chrome extension that helps you learn a new language!",
   "version": "1.0.0",
   "author": "Diana Camacho, Rachel Killackey",
+  "icons": {
+    "128": "images/icon-128.png"
+  },
   "chrome_url_overrides": {
     "newtab": "pages/tab.html"
   },
