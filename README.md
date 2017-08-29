@@ -1,4 +1,4 @@
-# FotoFluent ![FotoFluent Logo](/promo/fotofluent-logo.png)
+# ![FotoFluent Logo](/promo/fotofluent-logo.png)
 A Chrome extension that helps you learn a new language! Available languages are French, German, Italian, and Spanish.
 
 ![FotoFluent Screenshot](/promo/fotofluent-cake.png)
