@@ -12,8 +12,6 @@ const app = new Vue({
   el: '#app',
   store,
   render (h) {
-    return (
-      <Options />
-    )
+    return <Options />
   }
 })
