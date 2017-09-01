@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "FotoFluent",
   "description": "Learn a new language, and expand your vocabulary with FotoFluent!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Diana Camacho, Rachel Killackey",
   "icons": {
     "128": "images/icon-128.png"
