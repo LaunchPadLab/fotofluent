@@ -35,7 +35,6 @@ const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/translatio
 const store = new Vuex.Store({
   state: {
     language: 'de-DE',
-    topSites: [],
     translation: {},
     showTranslation: false
   },
@@ -44,11 +43,9 @@ const store = new Vuex.Store({
     async HYDRATE_STATE ({ commit, dispatch }) {
       const items = await chromep.storage.local.get([
         'language',
-        'topSites',
         'translation',
       ])
       commit('SET_LANGUAGE', items.language || store.state.language)
-      commit('SET_TOP_SITES', items.topSites)
     },
     async REQUEST_DATA ({ commit }) {
       try {
@@ -60,10 +57,6 @@ const store = new Vuex.Store({
       } catch (err) {
         console.log(err)
       }
-    },
-    async REQUEST_TOP_SITES ({ commit }) {
-      const mostVisitedUrls = await chromep.topSites.get()
-      commit('SET_TOP_SITES', mostVisitedUrls.slice(0, 5))
     },
     async UPDATE_LANGUAGE ({ commit, dispatch }, language) {
       await commit('SET_LANGUAGE', language)
@@ -78,10 +71,6 @@ const store = new Vuex.Store({
     SET_LANGUAGE (state, language) {
       state.language = language
       chromep.storage.local.set({ language })
-    },
-    SET_TOP_SITES (state, topSites) {
-      state.topSites = topSites
-      chromep.storage.local.set({ topSites })
     },
     SET_TRANSLATION (state, translation) {
       state.translation = translation

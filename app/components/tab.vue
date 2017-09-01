@@ -20,32 +20,18 @@
   import { mapActions, mapState } from 'vuex'
   import { LANGUAGES } from 'store'
   import Translation from './translation.vue'
-  import SearchBox from './search-box.vue'
-  import TopSites from './top-sites.vue'
   import LanguageOption from './language-option.vue'
 
   export default {
     components: {
       Translation,
-      SearchBox,
-      TopSites,
       LanguageOption
-    },
-
-    mounted () {
-      this.requestTopSites()
     },
 
     data () {
       return {
         languages: LANGUAGES
       }
-    },
-
-    methods: {
-      ...mapActions({
-        requestTopSites: 'REQUEST_TOP_SITES',
-      })
     },
 
     computed: {
