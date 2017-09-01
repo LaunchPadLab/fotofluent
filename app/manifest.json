@@ -13,7 +13,6 @@
   "permissions": [
     "https://fotofluent-admin.herokuapp.com/*",
     "storage",
-    "topSites",
     "tts"
   ],
   "web_accessible_resources": [
