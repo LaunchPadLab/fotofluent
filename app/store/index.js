@@ -53,7 +53,8 @@ const store = new Vuex.Store({
         const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
         const translation = sample(response.data)
         commit('SET_TRANSLATION', translation)
-        document.body.style.backgroundImage = `url(${translation.word.image})`
+        const photoUrl = translation.word.photo.optimized.url
+        document.body.style.backgroundImage = `url(${photoUrl})`
       } catch (err) {
         console.log(err)
       }
