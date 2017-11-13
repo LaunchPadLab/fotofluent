@@ -30,7 +30,7 @@ export const LANGUAGES = [
   },
 ]
 
-const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/translations.json'
+const TRANSLATIONS_ENDPOINT = 'https://fotofluent-admin.herokuapp.com/api/v1/translations'
 
 const store = new Vuex.Store({
   state: {
@@ -50,8 +50,8 @@ const store = new Vuex.Store({
     async REQUEST_DATA ({ commit }) {
       try {
         commit('HIDE_TRANSLATION')
-        const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?lang=${store.state.language}`)
-        const translation = sample(response.data)
+        const response = await axios.get(`${TRANSLATIONS_ENDPOINT}?language_code=${store.state.language}`)
+        const translation = sample(response.data.data.attributes)
         commit('SET_TRANSLATION', translation)
         const photoUrl = translation.word.photo.optimized.url
         document.body.style.backgroundImage = `url(${photoUrl})`
